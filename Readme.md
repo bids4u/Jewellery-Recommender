@@ -31,7 +31,7 @@ Users can upload images, chat to refine preferences, and receive curated jewelle
 ```bash
 git clone https://github.com/yourusername/jewellery-recommender.git
 cd jewellery-recommender
-
+```
 ### 🧩 Frontend Setup (React + Tailwind)
 
 📁 Path: ./jewellery-recommender
@@ -39,18 +39,18 @@ cd jewellery-recommender
 ### ▶️ Install dependencies
 ```bash
 npm install
-
+```
 ⚠️ Make sure Tailwind CSS is v3.x (not v4.x) — v4 requires different PostCSS setup.
 Run the app
 ```bash
 npm start
-
+```
 This runs the React app at http://localhost:3000
 ### ⚙️ Configure API URL
 Create .env file in the root of the frontend:
 ```bash
 REACT_APP_API_URL=http://localhost:8000
-
+```
 ### 🧱 Frontend Structure
 
 ```bash
@@ -67,7 +67,7 @@ src/
  ├── store/
  │   └── cartStore.js         # Zustand store for product selections
  └── index.css                # Tailwind styles
-
+```
  ### 💬 Chat Flow (Frontend)
 
 Greeting: Bot starts the chat with a prompt.
@@ -111,7 +111,7 @@ Framer Motion for subtle transitions
 | `npm start`     | Run local dev server    |
 | `npm run build` | Create production build |
 | `npm test`      | Run tests (optional)    |
-
+```
 ### ⚡ Backend Setup (FastAPI)
 
 📁 Path: ./Jewellery recommender fat api
@@ -120,21 +120,22 @@ Framer Motion for subtle transitions
 ```
 python -m venv .venv
 source .venv/bin/activate
-
+```
 ### ▶️ Install dependencies
 ```
 pip install -r requirements.txt
-
+```
 requirements.txt
 ```
 fastapi
 uvicorn
 aiofiles
 python-multipart
-
+```
 ### ▶️ Run the API server
 ```
 uvicorn app.main:app --reload --port 8000
+```
 Visit http://localhost:8000/docs -> for the interactive Swagger UI.
 
 ### 🧩 Backend Structure
@@ -144,7 +145,7 @@ app/
  ├── sampleimage/        # Demo jewellery image samples
  ├── storage/            # Uploaded images folder
  └── __pycache__/        # Cached modules
-
+```
 ### 🔌 API Endpoints
 POST /upload
 
@@ -155,14 +156,14 @@ curl -X POST http://localhost:8000/upload \
   -F "files=@ring.jpg" \
   -F "client_name=John Doe" \
   -F "notes=Silver floral pattern"
-
+```
 Response:
 ```
 {
   "upload_id": "ae83b3...",
   "message": "Upload received. Call /recommend to get suggestions."
 }
-
+```
 POST /recommend/{upload_id}
 
 Get AI-like mock jewellery recommendations.
@@ -170,7 +171,7 @@ Request:
 ```
 curl -X POST http://localhost:8000/recommend/ae83b3... \
   -F "refine_text=show me more rings with stones"
-
+```
 Response:
 ```
 {
@@ -185,12 +186,12 @@ Response:
   ],
   "message": "Recommendations ready."
 }
-
+```
 POST /select
 Add product to (mock) cart.
 ```
 { "product_id": "p1" }
-
+```
 GET /cart
 Return all selected products.
 Response:
@@ -198,12 +199,12 @@ Response:
 [
   { "id": "p1", "name": "Floral Silver Ring", "desc": "Elegant floral engraving" }
 ]
-
+```
 GET /health
 Health check:
 ```
 { "ok": true }
-
+```
 ### 🧠 Backend Design Notes
 ```
 | Step | Frontend Action         | Backend API                   |
@@ -214,7 +215,7 @@ Health check:
 | 4    | Bot returns suggestions | Product cards                 |
 | 5    | User selects            | `POST /select`                |
 | 6    | Fetch selections        | `GET /cart`                   |
-
+```
 ### 🧩 Developer Tips
 ```
 | Task              | Command                         |
@@ -224,7 +225,7 @@ Health check:
 | Test API          | `http://localhost:8000/docs`    |
 | Build Frontend    | `npm run build`                 |
 | Disable Scrollbar | `.no-scrollbar` class in CSS    |
-
+```
 ### 🪞 Example Flow
 User uploads “floral ring” images
 
