@@ -1,2 +1,5 @@
+# Frontend
 /jewellery-recommender/node_modules
-/Jewellery recommender fat api/.venv
+
+# Backend virtual environment
+**/.venv
