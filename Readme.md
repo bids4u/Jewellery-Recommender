@@ -29,7 +29,7 @@ Users can upload images, chat to refine preferences, and receive curated jewelle
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/yourusername/jewellery-recommender.git
+git clone https://github.com/bids4u/Jewellery-Recommender.git
 cd jewellery-recommender
 ```
 ### 🧩 Frontend Setup (React + Tailwind)
